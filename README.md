@@ -140,3 +140,6 @@ Before deploying to production:
 
 5. Configure CORS properly for your domain
 
+Contributed by Parsha Ranga Priya
+
+
