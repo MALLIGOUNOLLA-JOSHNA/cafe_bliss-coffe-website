@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Bliss - Premium Coffee Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Favorite button styling */
+    .favorite-btn {
+      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      backdrop-filter: blur(4px);
+    }
+    .favorite-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    }
+    .favorite-btn:active {
+      transform: scale(0.95);
+    }
+    .favorite-btn.active {
+      background: #fff7e6; /* soft amber */
+      color: #f5a623;      /* amber icon */
+      border-color: #ffd58a;
+      box-shadow: 0 6px 14px rgba(245, 166, 35, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <h1>Café Bliss</h1>
+      </div>
+      <nav class="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="login.html" id="loginBtn" class="nav-link btn-login">Login</a>
+        <a href="profile.html" id="profileBtn" class="nav-link" style="display:none;">Profile</a>
+        <a href="#" id="logoutBtn" class="nav-link" style="display:none;">Logout</a>
+    </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+            <h2 class="hero-title">Experience the Perfect Brew</h2>
+            <p class="hero-subtitle">Discover our handcrafted coffee creations and artisanal pastries in a warm, inviting atmosphere</p>
+            <div class="hero-buttons">
+              <a href="#menu" class="btn btn-primary">Explore Menu</a>
+              <a href="#about" class="btn btn-secondary">Our Story</a>
+            </div>
+      </div>
+      <div class="hero-image">
+            <img src="Screenshot 2025-08-11 120824.png" alt="Barista crafting perfect coffee" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Menu</h2>
+          <p class="section-subtitle">Carefully crafted beverages and fresh pastries</p>
+        </div>
+        
+        <div class="menu-categories">
+          <div class="menu-category">
+            <h3 class="category-title">Hot Coffee</h3>
+            <div class="menu-grid">
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop" alt="Classic Espresso" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Classic Espresso</h4>
+                  <p class="item-description">Rich and bold single shot of our premium Arabica beans</p>
+                  <span class="item-price">$3.50</span>
+                </div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShlZmcAZ_QqGNS5hc4LZnSHXbujwMGcSMbQA&s" alt="Drip Coffee">
+            </div>
+            <div class="menu-item-content">
+              <h4 class="item-name">Drip Coffee</h4>
+              <p class="item-description">Mindful Sipping</p>
+              <span class="item-price">$8.00</span>
+            </div>
+        </div>
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop" alt="Cappuccino" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Cappuccino</h4>
+                  <p class="item-description">Perfectly balanced espresso with steamed milk and velvety foam</p>
+                  <span class="item-price">$4.75</span>
+                </div>
+        </div>
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop" alt="Vanilla Latte" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Vanilla Latte</h4>
+                  <p class="item-description">Smooth espresso with steamed milk and sweet vanilla syrup</p>
+                  <span class="item-price">$5.25</span>
+                </div>
+        </div>
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop" alt="Caramel Macchiato" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Caramel Macchiato</h4>
+                  <p class="item-description">Espresso marked with steamed milk and caramel drizzle</p>
+                  <span class="item-price">$5.50</span>
+                </div>
+              </div>
+            </div>
+        </div>
+
+          <div class="menu-category">
+            <h3 class="category-title">Cold Beverages</h3>
+            <div class="menu-grid">
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop" alt="Iced Americano" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Iced Americano</h4>
+                  <p class="item-description">Espresso shots over ice with cold water</p>
+                  <span class="item-price">$4.25</span>
+                </div>
+        </div>
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop" alt="Cold Brew" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Cold Brew</h4>
+                  <p class="item-description">18-hour steeped coffee, smooth and naturally sweet</p>
+                  <span class="item-price">$4.95</span>
+                </div>
+        </div>
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop" alt="Iced Latte" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Iced Latte</h4>
+                  <p class="item-description">Espresso with cold milk over ice</p>
+                  <span class="item-price">$5.00</span>
+                </div>
+              </div>
+            </div>
+        </div>
+
+          <div class="menu-category">
+            <h3 class="category-title">Pastries & Food</h3>
+            <div class="menu-grid">
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=300&fit=crop" alt="Butter Croissant" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Butter Croissant</h4>
+                  <p class="item-description">Flaky, buttery French pastry baked fresh daily</p>
+                  <span class="item-price">$3.95</span>
+                </div>
+        </div>
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Blueberry Muffin" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Blueberry Muffin</h4>
+                  <p class="item-description">Moist muffin loaded with fresh blueberries</p>
+                  <span class="item-price">$4.25</span>
+                </div>
+        </div>
+        <div class="menu-item">
+                <div class="menu-item-image">
+                  <img src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&h=300&fit=crop" alt="Avocado Toast" />
+                </div>
+                <div class="menu-item-content">
+                  <h4 class="item-name">Avocado Toast</h4>
+                  <p class="item-description">Sourdough toast with smashed avocado, sea salt, and red pepper flakes</p>
+                  <span class="item-price">$8.50</span>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Online Ordering Section -->
+    <section id="order" class="ordering-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Order Online</h2>
+          <p class="section-subtitle">Skip the line and order ahead for pickup or delivery</p>
+        </div>
+        
+        <div class="ordering-options">
+          <div class="order-option">
+            <div class="option-icon">🚗</div>
+            <h3>Pickup</h3>
+            <p>Order ahead and pick up at our cafe</p>
+            <button class="btn btn-primary" onclick="startOrder('pickup')">Order for Pickup</button>
+          </div>
+          <div class="order-option">
+            <div class="option-icon">🚚</div>
+            <h3>Delivery</h3>
+            <p>Get your favorites delivered to your door</p>
+            <button class="btn btn-secondary" onclick="startOrder('delivery')">Order for Delivery</button>
+          </div>
+        </div>
+
+        <!-- Quick Order Cart -->
+        <div class="quick-order" id="quickOrder" style="display: none;">
+          <h3>Quick Order</h3>
+          <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated by JavaScript -->
+          </div>
+          <div class="cart-summary">
+            <div class="cart-total">
+              <span>Total: $<span id="cartTotal">0.00</span></span>
+            </div>
+            <button class="btn btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotions & Loyalty Section -->
+    <section class="promotions-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Special Offers & Loyalty</h2>
+          <p class="section-subtitle">Join our loyalty program and enjoy exclusive benefits</p>
+        </div>
+        
+        <div class="promotions-grid">
+          <div class="promotion-card">
+            <div class="promotion-badge">NEW</div>
+            <h3>Welcome Offer</h3>
+            <p>Get 20% off your first order when you sign up!</p>
+            <div class="promotion-code">WELCOME20</div>
+          </div>
+          <div class="promotion-card">
+            <div class="promotion-badge">POPULAR</div>
+            <h3>Happy Hour</h3>
+            <p>2-4 PM daily: 15% off all beverages</p>
+            <div class="promotion-time">2:00 PM - 4:00 PM</div>
+          </div>
+          <div class="promotion-card">
+            <div class="promotion-badge">LOYALTY</div>
+            <h3>Loyalty Rewards</h3>
+            <p>Earn 1 point per $1 spent. Redeem 100 points for a free drink!</p>
+            <div class="loyalty-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 45%"></div>
+              </div>
+              <span>45/100 points</span>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog & Events Section -->
+    <section class="blog-events-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest News & Events</h2>
+          <p class="section-subtitle">Stay updated with our latest stories and upcoming events</p>
+        </div>
+        
+        <div class="content-grid">
+          <div class="blog-posts">
+            <h3>Latest Blog Posts</h3>
+            <div class="blog-item">
+              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300&h=200&fit=crop" alt="Coffee brewing techniques" />
+              <div class="blog-content">
+                <h4>The Art of Perfect Espresso</h4>
+                <p>Discover the secrets behind crafting the perfect espresso shot...</p>
+                <span class="blog-date">January 15, 2025</span>
+              </div>
+            </div>
+            <div class="blog-item">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop" alt="Coffee beans" />
+              <div class="blog-content">
+                <h4>Our Coffee Bean Journey</h4>
+                <p>From farm to cup: Learn about our sustainable sourcing...</p>
+                <span class="blog-date">January 10, 2025</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="events">
+            <h3>Upcoming Events</h3>
+            <div class="event-item">
+              <div class="event-date">
+                <span class="day">25</span>
+                <span class="month">JAN</span>
+              </div>
+              <div class="event-details">
+                <h4>Latte Art Workshop</h4>
+                <p>Learn the basics of latte art with our expert baristas</p>
+                <span class="event-time">2:00 PM - 4:00 PM</span>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <span class="day">02</span>
+                <span class="month">FEB</span>
+              </div>
+              <div class="event-details">
+                <h4>Live Music Night</h4>
+                <p>Enjoy acoustic performances while sipping your favorite coffee</p>
+                <span class="event-time">7:00 PM - 9:00 PM</span>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <span class="day">14</span>
+                <span class="month">FEB</span>
+              </div>
+              <div class="event-details">
+                <h4>Valentine's Special</h4>
+                <p>Special couples menu and romantic atmosphere</p>
+                <span class="event-time">All Day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="section-title">Behind the Beans</h2>
+            <p class="about-description">
+              Founded in 2020, Café Bliss began as a dream to create more than just a coffee shop – we wanted to build a community hub where people could connect, create, and find comfort in every cup. What started as a small corner cafe has grown into a beloved local gathering place, where every visit feels like coming home.
+            </p>
+            <div class="about-features">
+              <div class="feature">
+                <h4>Artisan Roasting</h4>
+                <p>We roast our beans in small batches to ensure peak freshness and flavor</p>
+              </div>
+              <div class="feature">
+                <h4>Local Partnerships</h4>
+                <p>We work with local bakeries and suppliers to bring you the best regional ingredients</p>
+              </div>
+              <div class="feature">
+                <h4>Community Focus</h4>
+                <p>Our space is designed to foster connections, whether you're working, studying, or catching up with friends</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Serving</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Coffee Varieties</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Happy Customers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-content">
+          <div class="contact-info">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-details">
+              <div class="contact-item">
+                <h4>Location</h4>
+      <p>123 Coffee Street, Beanville</p>
+              </div>
+              <div class="contact-item">
+                <h4>Hours</h4>
+                <p>Monday - Sunday: 7:00 AM - 8:00 PM</p>
+              </div>
+              <div class="contact-item">
+                <h4>Contact</h4>
+                <p>Email: hello@cafebliss.com</p>
+      <p>Phone: (123) 456-7890</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-image">
+            <img src="backimg.jpg" alt="Café Bliss interior" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Café Bliss</h3>
+          <p>Experience the perfect brew</p>
+        </div>
+        <div class="footer-links">
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Café Bliss. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Button -->
+  <a href="#menu" class="fab" title="Order Now">☕</a>
+
+  <script>
+    // Shopping cart functionality
+    var cart = [];
+    var orderType = '';
+
+    // Check login status and update UI
+    function checkLoginStatus() {
+      try {
+        var isLoggedIn = localStorage.getItem('isLoggedIn');
+        var loginBtn = document.getElementById('loginBtn');
+        var profileBtn = document.getElementById('profileBtn');
+        var logoutBtn = document.getElementById('logoutBtn');
+        
+        if (loginBtn && profileBtn && logoutBtn) {
+          if (isLoggedIn === 'true') {
+            loginBtn.style.display = 'none';
+            profileBtn.style.display = 'inline-block';
+            logoutBtn.style.display = 'inline-block';
+          } else {
+            loginBtn.style.display = 'inline-block';
+            profileBtn.style.display = 'none';
+            logoutBtn.style.display = 'none';
+          }
+        }
+      } catch (error) {
+        console.log('Error checking login status:', error);
+      }
+    }
+    
+    // Handle logout
+    function setupLogoutHandler() {
+      var logoutBtn = document.getElementById('logoutBtn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          try {
+            // Clear login data
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            
+            // Show logout message
+            alert('You have been logged out successfully!');
+            
+            // Update UI
+            checkLoginStatus();
+          } catch (error) {
+            console.log('Error during logout:', error);
+            alert('Logout successful!');
+          }
+        });
+      }
+    }
+
+    // Ordering system functions
+    function startOrder(type) {
+      try {
+        orderType = type;
+        var isLoggedIn = localStorage.getItem('isLoggedIn');
+        
+        if (!isLoggedIn) {
+          alert('Please log in to place an order');
+          window.location.href = 'login.html';
+          return;
+        }
+        
+        var quickOrder = document.getElementById('quickOrder');
+        if (quickOrder) {
+          quickOrder.style.display = 'block';
+          // Smooth scroll with fallback
+          if (quickOrder.scrollIntoView) {
+            try {
+              quickOrder.scrollIntoView({ behavior: 'smooth' });
+            } catch (e) {
+              quickOrder.scrollIntoView();
+            }
+          }
+        }
+      } catch (error) {
+        console.log('Error starting order:', error);
+        alert('Please try again');
+      }
+    }
+
+    // Make functions global for onclick handlers
+    window.startOrder = startOrder;
+    window.proceedToCheckout = proceedToCheckout;
+
+    function addToCart(itemName, price) {
+      try {
+        var existingItem = null;
+        for (var i = 0; i < cart.length; i++) {
+          if (cart[i].name === itemName) {
+            existingItem = cart[i];
+            break;
+          }
+        }
+        
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({
+            name: itemName,
+            price: parseFloat(price.replace('$', '')),
+            quantity: 1
+          });
+        }
+        
+        updateCartDisplay();
+
+        // Ensure quick order panel is visible when items are added
+        var quickOrder = document.getElementById('quickOrder');
+        if (quickOrder) {
+          quickOrder.style.display = 'block';
+          if (quickOrder.scrollIntoView) {
+            try {
+              quickOrder.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } catch (e) {
+              quickOrder.scrollIntoView();
+            }
+          }
+        }
+      } catch (error) {
+        console.log('Error adding to cart:', error);
+      }
+    }
+
+    function updateCartDisplay() {
+      try {
+        var cartItems = document.getElementById('cartItems');
+        var cartTotal = document.getElementById('cartTotal');
+        
+        if (!cartItems || !cartTotal) return;
+        
+        if (cart.length === 0) {
+          cartItems.innerHTML = '<p>Your cart is empty</p>';
+          cartTotal.textContent = '0.00';
+          return;
+        }
+        
+        var html = '';
+        for (var i = 0; i < cart.length; i++) {
+          var item = cart[i];
+          html += '<div class="cart-item">' +
+            '<span class="item-name">' + item.name + '</span>' +
+            '<span class="item-quantity">x' + item.quantity + '</span>' +
+            '<span class="item-price">$' + (item.price * item.quantity).toFixed(2) + '</span>' +
+            '</div>';
+        }
+        cartItems.innerHTML = html;
+        
+        var total = 0;
+        for (var j = 0; j < cart.length; j++) {
+          total += cart[j].price * cart[j].quantity;
+        }
+        cartTotal.textContent = total.toFixed(2);
+      } catch (error) {
+        console.log('Error updating cart display:', error);
+      }
+    }
+
+    function proceedToCheckout() {
+      try {
+        if (cart.length === 0) {
+          alert('Your cart is empty');
+          return;
+        }
+        
+        var total = 0;
+        for (var i = 0; i < cart.length; i++) {
+          total += cart[i].price * cart[i].quantity;
+        }
+        
+        // Persist order and update loyalty
+        try {
+          var userEmail = localStorage.getItem('userEmail') || 'guest';
+          var storedOrdersRaw = localStorage.getItem('orders');
+          var storedOrders = storedOrdersRaw ? JSON.parse(storedOrdersRaw) : {};
+          var userOrders = Array.isArray(storedOrders[userEmail]) ? storedOrders[userEmail] : [];
+
+          var order = {
+            id: Date.now(),
+            items: cart.map(function(ci) { return { name: ci.name, quantity: ci.quantity, price: ci.price }; }),
+            date: new Date().toISOString(),
+            total: parseFloat(total.toFixed(2)),
+            type: orderType || 'pickup',
+            status: 'completed'
+          };
+
+          userOrders.unshift(order);
+          // Keep only recent 50 orders to avoid unbounded growth
+          if (userOrders.length > 50) userOrders = userOrders.slice(0, 50);
+          storedOrders[userEmail] = userOrders;
+          localStorage.setItem('orders', JSON.stringify(storedOrders));
+
+          // Loyalty: 1 point per $1 spent (rounded down)
+          var loyaltyKey = 'loyaltyPoints:' + userEmail;
+          var currentPoints = parseInt(localStorage.getItem(loyaltyKey) || '0', 10);
+          var earned = Math.floor(total);
+          localStorage.setItem(loyaltyKey, String(currentPoints + earned));
+        } catch (persistErr) {
+          console.log('Error persisting order:', persistErr);
+        }
+
+        alert('Order placed for ' + orderType + '! Total: $' + total.toFixed(2) + '\n\nThank you for your order!');
+        
+        // Clear cart
+        cart = [];
+        updateCartDisplay();
+        var quickOrder = document.getElementById('quickOrder');
+        if (quickOrder) {
+          quickOrder.style.display = 'none';
+        }
+      } catch (error) {
+        console.log('Error during checkout:', error);
+        alert('Order placed successfully!');
+      }
+    }
+
+    // Add click handlers to menu items
+    function setupMenuHandlers() {
+      try {
+        var menuItems = document.querySelectorAll('.menu-item');
+        for (var i = 0; i < menuItems.length; i++) {
+          var item = menuItems[i];
+          var nameElement = item.querySelector('.item-name');
+          var priceElement = item.querySelector('.item-price');
+          
+          if (nameElement && priceElement) {
+            var name = nameElement.textContent || nameElement.innerText;
+            var price = priceElement.textContent || priceElement.innerText;
+            
+            // Create closure to capture the values
+            (function(itemName, itemPrice, itemEl) {
+              itemEl.addEventListener('click', function() {
+                addToCart(itemName, itemPrice);
+              });
+
+              // Inject favorite button (heart/star) if not present
+              var existingFav = itemEl.querySelector('.favorite-btn');
+              if (!existingFav) {
+                var favBtn = document.createElement('button');
+                favBtn.className = 'favorite-btn';
+                favBtn.setAttribute('aria-label', 'Add to favorites');
+                favBtn.innerHTML = '❤';
+                // minimal inline styling to position over image
+                favBtn.style.position = 'absolute';
+                favBtn.style.top = '10px';
+                favBtn.style.right = '10px';
+                favBtn.style.background = 'rgba(255,255,255,0.95)';
+                favBtn.style.border = '1px solid #e0e0e0';
+                favBtn.style.borderRadius = '50%';
+                favBtn.style.width = '36px';
+                favBtn.style.height = '36px';
+                favBtn.style.display = 'flex';
+                favBtn.style.alignItems = 'center';
+                favBtn.style.justifyContent = 'center';
+                favBtn.style.cursor = 'pointer';
+                favBtn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.12)';
+                favBtn.style.fontSize = '16px';
+                favBtn.style.color = '#c33';
+                favBtn.style.zIndex = '5';
+                favBtn.style.pointerEvents = 'auto';
+
+                var imgWrap = itemEl.querySelector('.menu-item-image') || itemEl;
+                // Ensure container is positioned so absolute button places correctly
+                if (imgWrap) { imgWrap.style.position = 'relative'; }
+                (imgWrap || itemEl).appendChild(favBtn);
+
+                // Initialize state
+                updateFavoriteButtonState(itemName, favBtn);
+                if (isFavorite(itemName)) { favBtn.classList.add('active'); }
+
+                favBtn.addEventListener('click', function(ev) {
+                  ev.stopPropagation();
+                  toggleFavorite(itemName);
+                  updateFavoriteButtonState(itemName, favBtn);
+                  if (isFavorite(itemName)) { favBtn.classList.add('active'); } else { favBtn.classList.remove('active'); }
+                });
+              }
+            })(name, price, item);
+            
+            // Add hover effect
+            item.style.cursor = 'pointer';
+            item.title = 'Click to add to cart';
+          }
+        }
+      } catch (error) {
+        console.log('Error setting up menu handlers:', error);
+      }
+    }
+
+    // Favorites storage helpers (persisted per user)
+    function getFavoritesUserKey() {
+      var userEmail = localStorage.getItem('userEmail') || 'guest';
+      return 'favorites:' + userEmail;
+    }
+
+    function getFavorites() {
+      try {
+        var raw = localStorage.getItem(getFavoritesUserKey());
+        var arr = raw ? JSON.parse(raw) : [];
+        return Array.isArray(arr) ? arr : [];
+      } catch (_) {
+        return [];
+      }
+    }
+
+    function saveFavorites(favs) {
+      try {
+        localStorage.setItem(getFavoritesUserKey(), JSON.stringify(favs));
+      } catch (_) {}
+    }
+
+    function isFavorite(itemName) {
+      var favs = getFavorites();
+      for (var i = 0; i < favs.length; i++) {
+        if (favs[i] === itemName) return true;
+      }
+      return false;
+    }
+
+    function toggleFavorite(itemName) {
+      var favs = getFavorites();
+      var index = -1;
+      for (var i = 0; i < favs.length; i++) {
+        if (favs[i] === itemName) { index = i; break; }
+      }
+      if (index >= 0) {
+        favs.splice(index, 1);
+      } else {
+        favs.push(itemName);
+      }
+      saveFavorites(favs);
+    }
+
+    function updateFavoriteButtonState(itemName, btn) {
+      var favored = isFavorite(itemName);
+      btn.innerHTML = favored ? '★' : '❤';
+      btn.style.color = favored ? '#f5a623' : '#c33';
+      btn.title = favored ? 'Remove from favorites' : 'Add to favorites';
+    }
+
+    // Scroll effects and animations
+    function setupScrollEffects() {
+      try {
+        var header = document.querySelector('.header');
+        var lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          // Header scroll effect
+          if (scrollTop > 100) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+          
+          // FAB visibility
+          var fab = document.querySelector('.fab');
+          if (scrollTop > 300) {
+            fab.style.display = 'flex';
+          } else {
+            fab.style.display = 'none';
+          }
+          
+          lastScrollTop = scrollTop;
+        });
+        
+        // Intersection Observer for animations
+        if ('IntersectionObserver' in window) {
+          var observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          };
+          
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, observerOptions);
+          
+          // Observe elements for animation
+          var animatedElements = document.querySelectorAll('.menu-item, .section-header, .about-content, .contact-content');
+          animatedElements.forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+          });
+        }
+      } catch (error) {
+        console.log('Error setting up scroll effects:', error);
+      }
+    }
+
+    // Smooth scrolling for navigation links
+    var isScrolling = false;
+    
+    function setupSmoothScrolling() {
+      try {
+        var anchors = document.querySelectorAll('a[href^="#"]');
+        
+        anchors.forEach(function(anchor) {
+          anchor.addEventListener('click', function(e) {
+            var href = anchor.getAttribute('href');
+            
+            if (href !== '#' && href.length > 1) {
+              e.preventDefault();
+              
+              if (isScrolling) return;
+              
+              var targetId = href.substring(1);
+              var targetElement = document.getElementById(targetId);
+              
+              if (targetElement) {
+                isScrolling = true;
+                
+                var headerOffset = 80;
+                var elementPosition = targetElement.getBoundingClientRect().top;
+                var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+                
+                setTimeout(function() {
+                  isScrolling = false;
+                }, 1500);
+              }
+            }
+          });
+        });
+      } catch (error) {
+        console.error('Error setting up smooth scrolling:', error);
+      }
+    }
+
+    // Initialize everything when page loads
+    function initializePage() {
+      try {
+        checkLoginStatus();
+        setupLogoutHandler();
+        setupMenuHandlers();
+        setupScrollEffects();
+        setupSmoothScrolling();
+      } catch (error) {
+        console.log('Error initializing page:', error);
+      }
+    }
+    
+    // Cross-browser event handling
+    if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', initializePage);
+      window.addEventListener('load', checkLoginStatus);
+    } else if (document.attachEvent) {
+      document.attachEvent('onreadystatechange', function() {
+        if (document.readyState === 'complete') {
+          initializePage();
+        }
+      });
+      window.attachEvent('onload', checkLoginStatus);
+    } else {
+      window.onload = function() {
+        initializePage();
+        checkLoginStatus();
+      };
+    }
+  </script>
+</body>
+</html>
